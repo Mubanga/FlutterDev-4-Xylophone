@@ -38,7 +38,7 @@ class XylophoneButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: () {
-        _audio_player.play('note$_wav_number');
+        _audio_player.play('note$_wav_number.wav');
       },
       child: Container(
         color: _color,
