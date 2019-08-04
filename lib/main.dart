@@ -8,9 +8,10 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
-            //   mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               XylophoneButton(Colors.red.shade700, 1),
               XylophoneButton(Colors.orange.shade700, 2),
@@ -36,14 +37,12 @@ class XylophoneButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: () {
-        _audio_player.play('note$_wav_number.wav');
-      },
-      child: Container(
+    return Expanded(
+      child: FlatButton(
         color: _color,
-        width: 100,
-        height: 40,
+        onPressed: () {
+          _audio_player.play('note$_wav_number.wav');
+        },
       ),
     );
   }
